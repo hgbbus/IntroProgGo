@@ -388,7 +388,13 @@ Commit and push the changes to GitHub:
 
 ## Writing the Book
 
+### Front Matter
+
+#### Preface
+
 Work on the Preface. This is a work in progress, and I will keep updating it as I go along. The current content is just a placeholder.
+
+#### Introduction to the Parts
 
 No plan to write any thing for the introduction of the part for now. So, nothing for the `index.qmd` files in the parts.
 
@@ -398,6 +404,129 @@ No plan to write any thing for the introduction of the part for now. So, nothing
 
 Work in progress. The current content is just a placeholder.
 
+Sections planned for this chapter:
+- What is programming?
+- Computing machine model
+- First program and Go playground
+- Go installation and setup
+- Go workspace and project structure (to be postponed to later chapters) 
+- Chapter review
+- Programming exercises
+
 #### Ch02 Data, Types, and Computation
 
 Work in progress. The current content is just a placeholder.
+
+Sections planned for this chapter:
+- Data and data types
+- Data representation in memory (at bare metal level)
+- Variables and constants
+- Basic operators and expressions
+- Input and output
+- Using standard library functions for computation (e.g., math package)
+- Problem solving with data and computation
+- Chapter review
+- Programming exercises
+
+### Part II: Control Structures
+
+#### Ch03 Conditionals and Branching
+
+Work in progress. The current content is just a placeholder.
+
+Sections planned for this chapter:
+
+- Boolean data type and logical operators
+- If statements and branching
+- Switch statements and pattern matching
+- Error handling with conditionals
+- Problem solving with conditionals
+- Chapter review
+- Programming exercises
+
+#### Ch04 Basic Data Structures and Loops
+
+Work in progress. The current content is just a placeholder.
+
+Over here, we need to cover some basic go data structures like arrays and slices, since they are often used in loops.
+
+Sections planned for this chapter:
+- Arrays and slices in Go
+- For loops and iteration
+- While loops and infinite loops
+- Loop control statements (break, continue)
+- Nested loops and complexity
+- Problem solving with loops
+- Chapter review
+- Programming exercises
+
+### Part III: Modular Programming
+
+#### Ch05 Functions
+
+Work in progress. The current content is just a placeholder.
+
+Sections planned for this chapter:
+- Function definition and syntax
+- Parameters and arguments
+- Return values and multiple returns
+- Variadic functions
+- Anonymous functions and closures
+- Recursion and iterative solutions
+- Problem solving with functions
+- Chapter review
+- Programming exercises
+
+#### Ch06 Modules and Packages
+
+Work in progress. The current content is just a placeholder.
+
+Sections planned for this chapter:
+- Go modules and package management
+- Importing and using packages
+- Creating your own packages
+- Managing dependencies with Go modules
+- Problem solving with modules and packages
+- Chapter review
+- Programming exercises
+
+#### Ch07 Testing and Debugging
+Work in progress. The current content is just a placeholder.
+
+Sections planned for this chapter:
+- Writing tests with the `testing` package
+- Test-driven development (TDD) approach
+- Debugging techniques and tools (e.g., Delve)
+- Common pitfalls and best practices with testing and debugging
+- Chapter review
+- Programming exercises
+
+#### Ch08 More Data Structures and Algorithms
+Work in progress. The current content is just a placeholder.
+
+Sections planned for this chapter:
+- More data structures (e.g., maps, structs)
+- Basic algorithms (e.g., sorting, searching)
+- Algorithm analysis and complexity
+- Common pitfalls and best practices with data structures and algorithms
+- Chapter review
+- Programming exercises
+
+### Part IV: Advanced Topics
+
+#### Ch09 Methods and Interfaces
+
+#### Ch10 Generics and Type Parameters
+
+DIY data structure implementation with generics (e.g., stack, queue, linked list, binary tree, hash table) implementation of some common algorithms (e.g., sorting, searching) using generics.
+
+#### Ch11 File Input and Output
+
+#### Ch12 Concurrency with Goroutines and Channels
+
+#### Ch13 Network Programming with Go
+
+#### Ch14 Web Programming with Go
+
+#### Ch15 Programming for security
+
