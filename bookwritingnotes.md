@@ -245,3 +245,78 @@ Then, I will commit and push the updates to GitHub:
 % git commit -m "Add README with book description"
 % git push
 ```
+
+Finally, I will set up GitHub Pages to host the book online. The classic way is to go to the "Settings" tab of the GitHub repository, then to the "Pages" section. Then select the branch `main` and the folder `_book` as the source for GitHub Pages, and save the settings.
+
+But I will follow Gemini's advice to set up GitHub Actions to automatically build and deploy the book whenever I push changes to the `main` branch. This way, I don't have to manually trigger the deployment every time I update the book.
+
+First, create a special folder named `.github/workflows` in the root of the repository:
+
+```bash
+% mkdir -p .github/workflows
+```
+
+Then, add a file named `publish.yml` in the `.github/workflows` folder with the following content:
+
+```yaml
+name: Deploy Quarto Book to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main      # Triggers every time you push to the 'main' branch
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read  # Allows reading the repository contents (required for deployment)
+  pages: write    # Allows writing to GitHub Pages (required for deployment)
+  id-token: write # Allows generating an OpenID Connect token for authentication (required for deployment)
+
+concurrency:
+  group: "pages"              # Ensures only one deployment runs at a time
+  cancel-in-progress: false   # Allows multiple deployments to run concurrently (optional, set to true if you want to cancel previous deployments when a new one starts)
+
+jobs:
+  deploy:                     # This job handles the deployment process to GitHub Pages
+    environment:
+      name: "github-pages"
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html     # Compiles the website format
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book/ # Tells GitHub to upload the rendered HTML folder
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+Before pushing this workflow file, configure GitHub Repository Settings to allow GitHub Actions to deploy to GitHub Pages:
+1. Go to the "Settings" tab of your GitHub repository.
+2. In the left sidebar, click on "Pages".
+3. Under "Build and deployment", look for the dropdown menu labeled "Source".
+4. Change it to "GitHub Actions" instead of "Deploy from a branch".
+
+Then, commit and push the workflow file to GitHub:
+
+```bash
+% git add .
+% git commit -m "Add GitHub Actions workflow for automatic deployment to GitHub Pages"
+% git push
+```
