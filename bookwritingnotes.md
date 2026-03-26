@@ -320,3 +320,23 @@ Then, commit and push the workflow file to GitHub:
 % git commit -m "Add GitHub Actions workflow for automatic deployment to GitHub Pages"
 % git push
 ```
+
+The GitHub Actions workflow runs with some warnings:
+
+```
+Warning: Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/configure-pages@v4, actions/deploy-pages@v4, actions/upload-artifact@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+```
+
+Let's update the versions of the actions to the latest ones that support Node.js 24. The latest versions are:
+- actions/checkout@v6
+- actions/configure-pages@v5
+- actions/deploy-pages@v4 (still v4, but it supports Node.js 24)
+- actions/upload-artifact@v4
+
+After updating the workflow file with the new versions, commit and push the changes again:
+
+```bash
+% git add .
+% git commit -m "Update GitHub Actions workflow to use latest action versions that support Node.js 24"
+% git push
+```
