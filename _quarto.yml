@@ -20,6 +20,22 @@ book:
         #- part2-control-structures/index.qmd
         - part2-control-structures/ch03-conditionals.qmd
         - part2-control-structures/ch04-loops.qmd
+    - part: "Modular Programming"
+      chapters:
+        #- part3-modular-programming/index.qmd
+        - part3-modular-programming/ch05-functions.qmd
+        - part3-modular-programming/ch06-modules-packages.qmd
+        - part3-modular-programming/ch07-testing-debugging.qmd
+        - part3-modular-programming/ch08-data-structures-algos.qmd
+    - part: "Advanced Topics"
+      chapters:
+        - part4-advanced-topics/ch09-methods-interfaces.qmd
+        - part4-advanced-topics/ch10-generics-type-parameters.qmd
+        - part4-advanced-topics/ch11-file-io.qmd
+        - part4-advanced-topics/ch12-concurrency.qmd
+        - part4-advanced-topics/ch13-net-programming.qmd
+        - part4-advanced-topics/ch14-web-programming.qmd
+        - part4-advanced-topics/ch15-programming-security.qmd
     - references.qmd
 
 format:
