@@ -353,7 +353,7 @@ Commit and push any further changes to the `main` branch, and the GitHub Actions
 % git push
 ```
 
-### Final Touches on the Book Structure
+### Finalizing the Book Structure
 
 Update the `_quarto.yml` file to reflect the final structure of the book:
 
