@@ -38,6 +38,8 @@ book:
         - part4-advanced-topics/ch15-programming-security.qmd
     - references.qmd
 
+bibliography: references.bib
+
 format:
   html:
     theme: cosmo
@@ -45,3 +47,10 @@ format:
     code-copy: true         # Handy "Copy" button on Go code snippets
   pdf:
     documentclass: scrreprt # Excellent for academic printing
+    include-in-header:
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body:
+      text: |
+        \printindex

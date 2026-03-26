@@ -530,3 +530,56 @@ DIY data structure implementation with generics (e.g., stack, queue, linked list
 
 #### Ch15 Programming for security
 
+#### References and Subject Index
+
+Use a separate `references.bib` file to manage the bibliography, and use `references.qmd` to render the bibliography section in the book. This way, we can easily manage and update the references without cluttering the main content of the book.
+
+First, create a `references.bib` file in the root of the repository with the following content:
+
+```bibtex
+@book{golang,
+  title={The Go Programming Language},
+  author={Alan A. A. Donovan and Brian W. Kernighan},
+  year={2015},
+  publisher={Addison-Wesley Professional}
+}
+```
+
+In the chapters, we can cite the reference like this:
+
+```markdown
+As discussed in \cite{golang}, Go is a powerful programming language that is designed for simplicity and efficiency.
+```
+
+Then, add the following content to the `references.qmd` file:
+
+```markdown
+# References { .unnumbered }
+
+::: {#refs}
+:::
+```
+
+Here, the `::: {#refs} :::` syntax is a special placeholder. It tells Quarto: "Take all the sources I actually cited in my chapters and dump their formatted text right here."
+
+To generate the subject index for the book, add the following LaTeX commands to the `_quarto.yml` file under the `pdf` format section:
+
+```yaml
+  pdf:
+    documentclass: scrreprt # Excellent for academic printing
+    include-in-header:
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body:
+      text: |
+        \printindex
+```
+
+The web index is handled by a Full-Text Search Bar at the top of the sidebar, which is enabled by default in Quarto's HTML format. Readers can simply type keywords into the search bar to find relevant sections in the book.
+
+To generate the PDF index, you can run the following command in the terminal:
+
+```bash
+% quarto render --to pdf
+```
