@@ -340,3 +340,15 @@ After updating the workflow file with the new versions, commit and push the chan
 % git commit -m "Update GitHub Actions workflow to use latest action versions that support Node.js 24"
 % git push
 ```
+
+Still some warnings. Forget about them for now.
+
+Go to the "Settings" tab of the GitHub repository, then to the "Pages" section. You should see a message that says "Your site is ready to be published at https://hgbbus.github.io/IntroProgGo/". Click on the link to view your book online!
+
+Commit and push any further changes to the `main` branch, and the GitHub Actions workflow will automatically build and deploy the updated book to GitHub Pages.
+
+```bash
+% git add .
+% git commit -m "Minor update"
+% git push
+```
