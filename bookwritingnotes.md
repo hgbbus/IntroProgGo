@@ -352,3 +352,35 @@ Commit and push any further changes to the `main` branch, and the GitHub Actions
 % git commit -m "Minor update"
 % git push
 ```
+
+### Final Touches on the Book Structure
+
+Update the `_quarto.yml` file to reflect the final structure of the book:
+
+```yaml
+...
+
+  # This sets up your sidebar navigation with Parts and Chapters
+  chapters:
+    - index.qmd
+    - part: "Getting Started"
+      chapters:
+        #- part1-getting-started/index.qmd       
+        - part1-getting-started/ch01-the-basics.qmd
+        - part1-getting-started/ch02-data-types-computation.qmd
+    - part: "Control Structures"
+      chapters:
+        #- part2-control-structures/index.qmd
+        - part2-control-structures/ch03-conditionals.qmd
+...
+```
+
+Rename the corresponding chapter files and directories to match the new structure.
+
+Commit and push the changes to GitHub:
+
+```bash
+% git add .
+% git commit -m "Update book structure and chapter file names"
+% git push
+```

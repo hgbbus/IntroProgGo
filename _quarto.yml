@@ -10,14 +10,15 @@ book:
   # This sets up your sidebar navigation with Parts and Chapters
   chapters:
     - index.qmd
-    - part: "The Go Workspace"
+    - part: "Getting Started"
       chapters:
-        - part1-basics/index.qmd       
-        - part1-basics/01-variables.qmd
-        - part1-basics/02-functions.qmd
-    - part: "Concurrency"
+        #- part1-getting-started/index.qmd       
+        - part1-getting-started/ch01-the-basics.qmd
+        - part1-getting-started/ch02-data-types-computation.qmd
+    - part: "Control Structures"
       chapters:
-        - part2-concurrency/03-goroutines.qmd
+        #- part2-control-structures/index.qmd
+        - part2-control-structures/ch03-conditionals.qmd
     - references.qmd
 
 format:
