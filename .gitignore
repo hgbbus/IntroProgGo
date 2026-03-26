@@ -15,3 +15,6 @@ __debug_bin
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+/.quarto/
+**/*.quarto_ipynb

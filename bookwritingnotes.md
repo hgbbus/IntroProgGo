@@ -372,6 +372,7 @@ Update the `_quarto.yml` file to reflect the final structure of the book:
       chapters:
         #- part2-control-structures/index.qmd
         - part2-control-structures/ch03-conditionals.qmd
+        - part2-control-structures/ch04-loops.qmd
 ...
 ```
 
