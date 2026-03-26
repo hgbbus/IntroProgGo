@@ -1,0 +1,220 @@
+# Book Writing Notes
+
+This file records the steps and notes for writing this book. In the process, I consulted Gemini heavyly for advice and suggestions. I may use other AI tools as well.
+
+## Preparation
+
+### Creating a Directory and Notes File
+
+First, I created a directoy for the book project:
+
+```bash
+% mkdir IntroProgGo
+% cd IntroProgGo
+```
+
+Then, I created a file to record the steps and notes for writing the book:
+
+```bash
+% touch bookwritingnotes.md
+```
+
+and started recording the steps and notes in this file.
+
+### Installing Quarto
+
+After asking AI for recommendations on tools for writing the book, I decided to use Quarto, which is a powerful tool for creating documents, presentations, and websites.
+
+I downloaded the latest version of Quarto from the official website: https://quarto.org/docs/get-started/ and got a file named `quarto-1.9.36-macos.pkg`.
+
+I installed Quarto by double-clicking the downloaded file and following the installation instructions.
+
+Then, in the terminal, I verified the installation by running:
+
+```bash
+% quarto check
+Quarto 1.9.36
+[✓] Checking environment information...
+      Quarto cache location: ~/Library/Caches/quarto
+[✓] Checking versions of quarto binary dependencies...
+      Pandoc version 3.8.3: OK
+      Dart Sass version 1.87.0: OK
+      Deno version 2.4.5: OK
+      Typst version 0.14.2: OK
+[✓] Checking versions of quarto dependencies......OK
+[✓] Checking Quarto installation......OK
+      Version: 1.9.36
+      Path: /Applications/quarto/bin
+
+[✓] Checking tools....................OK
+      TinyTeX: (not installed)
+      Chromium: (not installed)
+      Chrome Headless Shell: (not installed)
+      VeraPDF: (not installed)
+
+[✓] Checking LaTeX....................OK
+      Using: Installation From Path
+      Path: /Library/TeX/texbin
+      Version: 2023
+
+[✓] Checking Chrome Headless....................OK
+      Using: Chrome found on system
+      Path: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+      Source: MacOS known location
+
+[✓] Checking basic markdown render....OK
+
+[✓] Checking R installation...........(None)
+
+      Unable to locate an installed version of R.
+      Install R from https://cloud.r-project.org/
+
+[✓] Checking Python 3 installation....OK
+      Version: 3.13.11
+      Path: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3
+      Jupyter: (None)
+
+      Jupyter is not available in this Python installation.
+      Install with python3 -m pip install jupyter
+
+[✓] Checking Julia installation...
+```
+
+Then, I installed the Quarto extension for Visual Studio Code. I then restarted Visual Studio Code to ensure the extension is properly loaded.
+
+### Directory Structure
+
+Per Gemini, I created the following directory structure (I certainly will modify it as needed later):
+
+```
+IntroProgGo/
+├── _quarto.yml             # ⚙️ The Master Configuration (defines parts/chapters)
+├── index.qmd               # 📖 The Welcome/Landing Page (Preface)
+├── references.qmd          # 📚 Generated Bibliography/References
+├── part1-basics/
+│   ├── index.qmd           # 🧩 Intro to Part 1
+│   ├── 01-variables.qmd    # 📝 Chapter 1
+│   └── 02-functions.qmd    # 📝 Chapter 2
+└── part2-concurrency/
+    ├── index.qmd           # 🧩 Intro to Part 2
+    └── 03-goroutines.qmd   # 📝 Chapter 3
+```
+
+The `.qmd` files are Markdown files with Quarto extensions. It is 100% compatible with standard Markdown (.md), but allows you to do advanced Quarto things later!
+
+### Creating the Master Configuration File
+
+The `_quarto.yml` file is the master configuration file for the book. It defines the structure of the book, including the parts and chapters.
+
+Here is the content of the `_quarto.yml` file I created:
+
+```yaml
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Introduction to Programming Using Go"
+  author: "Gongbing Hong"
+  date: "2026-03-25"
+  
+  # This sets up your sidebar navigation with Parts and Chapters
+  chapters:
+    - index.qmd
+    - part: "The Go Workspace"
+      chapters:
+        - part1-basics/index.qmd
+        - part1-basics/01-variables.qmd
+        - part1-basics/02-functions.qmd
+    - part: "Concurrency"
+      chapters:
+        - part2-concurrency/index.qmd
+        - part2-concurrency/03-goroutines.qmd
+    - references.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true               # Table of contents for each page
+    code-copy: true         # Handy "Copy" button on Go code snippets
+  pdf:
+    documentclass: scrreprt # Excellent for academic printing
+```
+
+Then, I ran the following command to preview the book:
+
+```bash
+% quarto preview
+```
+
+This command starts a local server and opens the book in my web browser. I can see the structure of the book with the parts and chapters I defined in the `_quarto.yml` file.
+
+There was a little issue with the numbering of the chapters, where the first `index.qmd` was numbered as 1 and the second `index.qmd` numbered as 2, etc.
+
+The first `index.qmd` is the preface of the book, and it should not be numbered as a chapter. Let's put the following content in the `index.qmd` file to make it a proper preface:
+
+```markdown
+# Preface {.unnumbered}
+
+Welcome to my introductory Go textbook for college students. In this book, you will learn...
+
+Best things to put here:
+
+    Welcome Message: Why are we learning Go? What makes Go special (compiled, statically typed, garbage collected)?
+
+    Target Audience: Prerequisite knowledge (e.g., "Assumes you know basic Python/Java loops").
+
+    Syllabus / Learning Outcomes: What will students be able to build by Week 15?
+```
+
+Notice the `{.unnumbered}` after the heading. This tells Quarto not to number this section as a chapter.
+
+The other `index.qmd` files in the `part1-basics` and `part2-concurrency` directories are the introductions to the respective parts. They shouldn't be numbered as chapters either. They were similarly fixed by adding `{.unnumbered}` to their headings.
+
+Not every book writer would choose to have an introduction for each part. I guess I will do the same by deleting the `index.qmd` files in the parts. Accordingly, remove the references to these files in the `_quarto.yml` file as well.
+
+Similarly, I also fixed the `references.qmd` file by adding `{.unnumbered}` to its heading, since it should not be numbered as a chapter either.
+
+### Setting Up Version Control with Git, GitHub, and GitHub Pages
+
+First, I created the `.gitignore` file with the following content:
+
+```
+# Quarto output and freeze directories
+_book/
+_site/
+.quarto/
+
+# Go binaries and workspace files (if you write Go tests locally)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+__debug_bin
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+```
+
+Then, I initialized a Git repository in the `IntroProgGo` directory and made the first commit:
+
+```bash
+# Initialize a new Git repository
+% git init
+
+# Set local git user email to a GitHub no-reply email
+% git config user.email "hgbbus@users.noreply.github.com"
+
+# Stage all files (respecting your new .gitignore!)
+% git add .
+
+# Create your first commit
+% git commit -m "Initialize Quarto textbook with proper structure"
+
+# Rename your branch to 'main' (modern standard)
+# % git branch -M main        # Not needed; already named 'main' by default
+```
+

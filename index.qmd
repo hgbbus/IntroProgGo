@@ -1,0 +1,11 @@
+# Preface {.unnumbered}
+
+Welcome to my introductory Go textbook for college students. In this book, you will learn...
+
+Best things to put here:
+
+    Welcome Message: Why are we learning Go? What makes Go special (compiled, statically typed, garbage collected)?
+
+    Target Audience: Prerequisite knowledge (e.g., "Assumes you know basic Python/Java loops").
+
+    Syllabus / Learning Outcomes: What will students be able to build by Week 15?

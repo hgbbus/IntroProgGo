@@ -1,0 +1,17 @@
+# Quarto output and freeze directories
+_book/
+_site/
+.quarto/
+
+# Go binaries and workspace files (if you write Go tests locally)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+__debug_bin
+
+# OS-specific files
+.DS_Store
+Thumbs.db

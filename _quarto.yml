@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Introduction to Programming Using Go"
+  author: "Gongbing Hong"
+  date: "2026-03-25"
+  
+  # This sets up your sidebar navigation with Parts and Chapters
+  chapters:
+    - index.qmd
+    - part: "The Go Workspace"
+      chapters:
+        - part1-basics/index.qmd       
+        - part1-basics/01-variables.qmd
+        - part1-basics/02-functions.qmd
+    - part: "Concurrency"
+      chapters:
+        - part2-concurrency/03-goroutines.qmd
+    - references.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true               # Table of contents for each page
+    code-copy: true         # Handy "Copy" button on Go code snippets
+  pdf:
+    documentclass: scrreprt # Excellent for academic printing
