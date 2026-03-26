@@ -218,3 +218,30 @@ Then, I initialized a Git repository in the `IntroProgGo` directory and made the
 # % git branch -M main        # Not needed; already named 'main' by default
 ```
 
+Next, I created a new repository on GitHub named `IntroProgGo` and kept it "Public". I didn't add any of those suggested files.
+
+Then, I connected my local Git repository to the GitHub repository and pushed the initial commit:
+
+```bash
+# Add the GitHub repository as a remote named 'origin'
+% git remote add origin https://github.com/hgbbus/IntroProgGo.git
+
+# Push my commits to GitHub (set upstream to 'main')
+# % git branch -M main
+% git push -u origin main
+
+Now, I will add a local `README.md` file with the following content:
+
+```markdown
+# Introduction to Programming Using Go
+
+This is the source code repository for the book "Introduction to Programming Using Go" by Gongbing Hong. The book is designed for college students learning programming for the first time. The language of instruction is Go, which is a powerful and efficient programming language developed by Google.
+```
+
+Then, I will commit and push the updates to GitHub:
+
+```bash
+% git add .
+% git commit -m "Add README with book description"
+% git push
+```
