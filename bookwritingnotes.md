@@ -385,3 +385,19 @@ Commit and push the changes to GitHub:
 % git commit -m "Update book structure and chapter file names"
 % git push
 ```
+
+## Writing the Book
+
+Work on the Preface. This is a work in progress, and I will keep updating it as I go along. The current content is just a placeholder.
+
+No plan to write any thing for the introduction of the part for now. So, nothing for the `index.qmd` files in the parts.
+
+### Part I: Getting Started
+
+#### Ch01 The Basics
+
+Work in progress. The current content is just a placeholder.
+
+#### Ch02 Data, Types, and Computation
+
+Work in progress. The current content is just a placeholder.

@@ -1,5 +1,0 @@
-# Part I Intro { .unnumbered }
-
-## Some Preface Text Here
-
-Bla bla bla.
