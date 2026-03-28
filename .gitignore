@@ -12,6 +12,11 @@ _site/
 *.test
 __debug_bin
 
+# Scratch files and logs
+scratch/
+*.log
+*.tmp
+
 # OS-specific files
 .DS_Store
 Thumbs.db

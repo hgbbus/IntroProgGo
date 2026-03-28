@@ -1,11 +1,34 @@
 # Preface {.unnumbered}
 
-Welcome to my introductory Go textbook for college students. In this book, you will learn...
+A few years ago, I wrote a small book called *Introduction to Programming -- A Very Brief Text for the Young and Impatient*.  It used Python as the teaching language and was aimed at high-achieving middle and high school students I taught privately.  The guiding principle was simple: keep it short, keep it clear, and never let the book itself become an obstacle to learning.
 
-Best things to put here:
+That principle has not changed.  What has changed is the audience and the language.
 
-    Welcome Message: Why are we learning Go? What makes Go special (compiled, statically typed, garbage collected)?
+This book, *Introduction to Programming Using Go*, is written for a broader readership.  The early chapters assume no prior programming experience and are perfectly suited for entering college students or motivated high schoolers.  As the book progresses into modular programming, data structures, concurrency, and web programming, the material grows to meet the needs of sophomores and juniors studying computer science.  The goal is to take a reader from zero to competent in a single, reasonably sized volume.
 
-    Target Audience: Prerequisite knowledge (e.g., "Assumes you know basic Python/Java loops").
+"Reasonably sized" is doing some heavy lifting in that sentence.  Programming books today routinely run to a thousand pages or more.  The classic K&R C book was 272 pages.  I make no promise to match Kernighan and Ritchie, but I will not waste your time.  Every chapter earns its place.  When a topic can be explained in a page, it gets a page -- not ten.  Details that belong in a reference manual will be left to the reference manual.
 
-    Syllabus / Learning Outcomes: What will students be able to build by Week 15?
+## Why Go?
+
+Readers of my first book may wonder why I switched from Python to Go.  It is a fair question, and I owe you a straight answer.
+
+**Go is surprisingly simple to learn.**  Go was designed at Google by veterans who had grown tired of language complexity.  The result is a language with a small specification, a minimal set of keywords, and very few ways to do the same thing.  Where other languages pile on features, Go stays lean.  A student who spends a weekend with Go's syntax will have seen nearly all of it.
+
+**Go is modern and efficient.**  Go compiles directly to machine code, producing fast, standalone binaries with no interpreter or virtual machine required.  Its built-in garbage collector keeps memory management out of the beginner's way, while its performance remains close to C.  For students who will eventually care about speed, scalability, and deployment, these qualities matter from day one.
+
+**Go is remarkably versatile.**  With Go you can write traditional command-line programs, build modern web applications, handle thousands of concurrent tasks with goroutines and channels, and work with a rich standard library that covers everything from cryptography to networking to file I/O.  It is one of the few languages equally at home in a first-year programming course and in a production backend serving millions of users.
+
+**Go can save a computer science student a great deal of time.**  A typical CS curriculum requires students to learn C for systems programming, Java for object-oriented design, and perhaps Python or JavaScript for scripting and web work.  Go covers a remarkable amount of this ground in a single language.  Its static typing and compiled nature teach the discipline of C and Java; its clean syntax and fast iteration cycle rival the convenience of Python; its concurrency model and standard library handle the networking and web tasks that used to require a whole separate toolchain.  Learning Go well does not eliminate the need to eventually learn other languages, but it gives you a powerful, versatile foundation that transfers easily.
+
+## How to Read This Book
+
+The book is organized into four parts.  **Part I** covers the basics: setting up your environment, writing your first program, and understanding data types and computation.  **Part II** introduces control structures -- conditionals and loops -- the building blocks of program logic.  **Part III** moves into modular programming: functions, packages, testing, and fundamental data structures and algorithms.  **Part IV** tackles advanced topics including methods, interfaces, generics, file I/O, concurrency, networking, web programming, and security.
+
+If you are a complete beginner, start at the beginning and work through in order.  If you already know another language, skim the early chapters for Go-specific details and then move to whatever interests you most.
+
+Code examples are kept short and self-contained.  You should type them out and run them yourself -- reading code is not the same as writing code.  When you finish a chapter, you should be able to write small programs that use what you have learned.
+
+This is not a Go reference book.  It is a programming book that happens to use Go.  The focus is on ideas -- how to think about problems, break them into pieces, and express solutions in code.  Go is simply the vehicle, and a very good one at that.
+
+Let's get started.
+

@@ -392,7 +392,7 @@ Commit and push the changes to GitHub:
 
 #### Preface
 
-Work on the Preface. This is a work in progress, and I will keep updating it as I go along. The current content is just a placeholder.
+Preface is now in the `index.qmd` file in the root of the repository.
 
 #### Introduction to the Parts
 
