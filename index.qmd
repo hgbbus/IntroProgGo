@@ -6,11 +6,11 @@ That principle has not changed.  What has changed is the audience and the langua
 
 This book, *Introduction to Programming Using Go*, is written for a broader readership.  The early chapters assume no prior programming experience and are perfectly suited for entering college students or motivated high schoolers.  As the book progresses into modular programming, data structures, concurrency, and web programming, the material grows to meet the needs of sophomores and juniors studying computer science.  The goal is to take a reader from zero to competent in a single, reasonably sized volume.
 
-"Reasonably sized" is doing some heavy lifting in that sentence.  Programming books today routinely run to a thousand pages or more.  The classic K&R C book was 272 pages.  I make no promise to match Kernighan and Ritchie, but I will not waste your time.  Every chapter earns its place.  When a topic can be explained in a page, it gets a page -- not ten.  Details that belong in a reference manual will be left to the reference manual.
+"Reasonably sized" is doing some heavy lifting in that sentence.  Programming books today routinely run to a thousand pages or more.  The classic K&R C book [@kr_c] was 272 pages.  I make no promise to match Kernighan and Ritchie, but I will not waste your time.  Every chapter earns its place.  When a topic can be explained in a page, it gets a page -- not ten.  Details that belong in a reference manual will be left to the reference manual.
 
 ## Why Go?
 
-Readers of my first book may wonder why I switched from Python to Go.  It is a fair question, and I owe you a straight answer.
+Readers of my first book may wonder why I switched from Python to Go [@golang].  It is a fair question, and I owe you a straight answer.
 
 **Go is surprisingly simple to learn.**  Go was designed at Google by veterans who had grown tired of language complexity.  The result is a language with a small specification, a minimal set of keywords, and very few ways to do the same thing.  Where other languages pile on features, Go stays lean.  A student who spends a weekend with Go's syntax will have seen nearly all of it.
 
