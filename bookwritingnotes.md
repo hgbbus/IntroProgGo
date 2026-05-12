@@ -175,6 +175,19 @@ Not every book writer would choose to have an introduction for each part. I gues
 
 Similarly, I also fixed the `references.qmd` file by adding `{.unnumbered}` to its heading, since it should not be numbered as a chapter either.
 
+Finally, to render the book to HTML format and the PDF format, I ran the following command:
+
+```bash
+% quarto render --to html
+% quarto render --to pdf
+```
+
+Or simply:
+
+```bash
+% quarto render
+```
+
 ### Setting Up Version Control with Git, GitHub, and GitHub Pages
 
 First, I created the `.gitignore` file with the following content:
